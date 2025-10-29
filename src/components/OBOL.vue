@@ -46,8 +46,11 @@
             for a confidential lending/borrowing protocol.
             Amounts are encrypted client-side and processed through Zama’s FHE pipeline.
             Performance and UX can differ from traditional systems, and some values shown in the UI may be
-            <span class="font-semibold text-foreground">approximations</span> to preserve confidentiality (Obfuscated
-            Deposits).
+            <span class="font-semibold text-foreground">approximations</span> to preserve confidentiality.
+          </p>
+          <p>
+            OBOL relies on  <span class="font-semibold text-foreground">CAMM</span> for price data.
+            Learn more in the OBOL repo.
           </p>
 
           <p class="text-foreground">
