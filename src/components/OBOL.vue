@@ -896,7 +896,7 @@
   </div>
 
   <!-- Loading -->
-  <div v-if="!blockModals.value && showLoading" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+  <div v-if="!blockModals && showLoading" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
     @click.self="closeLoading" @keydown.esc="closeLoading">
     <div class="bg-surface rounded-lg p-6 shadow-xl max-w-md w-full border border-slate-700">
       <div class="flex flex-col items-center">
@@ -930,7 +930,7 @@
   </div>
 
   <!-- Success -->
-  <div v-if="!blockModals.value && showSuccess" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+  <div v-if="!blockModals && showSuccess" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
     <div class="bg-surface rounded-lg p-6 shadow-xl max-w-md w-full border border-slate-700">
       <div class="flex flex-col items-center">
         <div
