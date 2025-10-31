@@ -361,11 +361,17 @@
               <div class="text-xs text-muted-foreground">Collateral</div>
               <div class="text-2xl font-bold">{{ userClear.collat }}</div>
               <div class="text-xs text-muted-foreground">{{ tokenSymbols.collat }}</div>
+              <div class="mt-3 text-xs ">
+              Factor (A) : <span class="font-bold">{{ truncatePublicFactor(userPublic.A) }}</span>
+              </div>
             </div>
             <div class="bg-surface-2 p-4 rounded-lg border border-slate-700">
               <div class="text-xs text-muted-foreground">Debt</div>
               <div class="text-2xl font-bold">{{ userClear.debt }}</div>
               <div class="text-xs text-muted-foreground">{{ tokenSymbols.debt }}</div>
+              <div class="mt-3 text-xs">
+               Factor (B) : <span class="font-bold">{{  truncatePublicFactor(userPublic.B) }}</span>
+              </div>
             </div>
             <div class="bg-surface-2 p-4 rounded-lg border border-slate-700">
               <div class="text-xs text-muted-foreground">Max Borrow Headroom</div>
@@ -1005,6 +1011,14 @@ const REQUIRED_NETWORK = {
   rpcUrl: NETWORK_ENV.public.RPC_URL,
   blockExplorerUrl: NETWORK_ENV.public.EXPLORER_URL
 }
+
+function truncatePublicFactor(pf: BigInt): string {
+  if (pf === 0n) return '0';
+  const pfStr = pf.toString();
+  const str = pfStr.slice(0,3) + ".." + pfStr.slice(-3);
+  return str;
+}
+
 function toHexChainId(v: any): string {
   if (typeof v === 'number') return `0x${v.toString(16)}`.toLowerCase()
   if (typeof v === 'string') {
