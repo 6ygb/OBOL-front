@@ -183,7 +183,7 @@
 
       <!-- Tabs -->
       <div class="border-b border-border bg-surface">
-        <nav class="flex flex-wrap gap-3 p-4">
+        <nav class="flex flex-wrap gap-3 p-4 justify-center">
           <button v-for="tab in tabs" :key="tab.id" @click="activeTab = tab.id"
             class="px-5 py-2.5 rounded-full text-sm font-medium transition-all border" :class="activeTab === tab.id
               ? 'bg-gold text-black border-transparent shadow'
